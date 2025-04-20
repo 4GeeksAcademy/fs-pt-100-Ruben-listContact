@@ -1,3 +1,4 @@
+
 const storeService = {}
 
 
@@ -84,10 +85,12 @@ storeService.deleteContact = async (id) => {
             headers: {
               'Content-Type': 'application/json'
             }
-          }) 
-          return storeService.uploadAgend()
+          })
+          if (!resp.ok) throw new Error("Error on Upload")
+            return { success: true, deletedId: id };
     } catch (error) {
         console.log(error)
+        return { success: false };
     }
 }
 

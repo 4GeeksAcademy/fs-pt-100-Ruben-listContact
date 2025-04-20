@@ -1,0 +1,40 @@
+
+.container {
+    padding: 20px;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.botonSubmit {
+    margin-top: 20px;
+}
+
+.backhome {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.navbar {
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}

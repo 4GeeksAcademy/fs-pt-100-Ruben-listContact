@@ -1,7 +1,7 @@
 // Import necessary components from react-router-dom and other parts of the application.
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import useGlobalReducer from "../hooks/useGlobalReducer";  // Custom hook for accessing the global state.
+import useGlobalReducer from "../hooks/useGlobalReducer";  
 import storeService from "../Stores/flux";
 
 export const EditContact = () => {
@@ -29,9 +29,13 @@ export const EditContact = () => {
 
   }
 
+  const handleReset = () => {
+    setContacto(store.agenda.find(el=> el.id == params.id))
+  }
+
   return (
     <div className="container">
-      <h2 className="text-center">Edit Contact</h2>
+      <h2 className="text-center">Edit Your Dragon!</h2>
       <form onSubmit={handleSubmit} >
         <div className="form-row">
           <div className="form-group p-2">
@@ -59,8 +63,12 @@ export const EditContact = () => {
         </div>
         <div className="botonSubmit row p-3">
           <button
-            className="btn btn-secondary"
-            type="submit">Enviar Contacto</button>
+            className="btn btn-secondary col-10"
+            type="submit">Send DRAGON!!</button>
+            <button
+            className="btn btn-warning col-2"
+            type="submit" onClick={handleReset}>Reset Dragon!</button>
+
         </div>
       </form>
 

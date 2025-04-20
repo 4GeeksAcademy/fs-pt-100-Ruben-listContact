@@ -1,7 +1,7 @@
 export const initialStore = () => {
   return {
     //contactos: [],
-    agenda: null,
+    agenda: [],
   }
 }
 
@@ -12,7 +12,12 @@ export default function storeReducer(store, action = {}) {
         ...store, agenda: action.payload
       }
       
-
+      case 'delete_contact':
+        return {
+          ...store,
+          agenda: store.agenda.filter(contact => contact.id !== action.payload)
+        };
+        
     default:
       throw Error('Unknown action.');
   }
