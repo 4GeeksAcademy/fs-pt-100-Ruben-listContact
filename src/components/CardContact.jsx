@@ -10,9 +10,6 @@ export const ContactCard = (props) => {
     const navegar = useNavigate()
     const { store, dispatch } = useGlobalReducer()
 
-    // useEffect(()=>{
-    //     handleDelete()
-    // }, [])
 
 
     const handleDelete = async () => {
@@ -20,11 +17,10 @@ export const ContactCard = (props) => {
         try {
             const resp = await storeService.deleteContact(props.cid)
             console.log(resp)
-            if (resp.success) {  // o según lo que devuelva tu API
-                // Elimina el contacto del estado global
+            if (resp.success) { 
                 dispatch({
                   type: 'delete_contact',
-                  payload: props.cid  // pasás solo el id
+                  payload: props.cid 
                 });
             }
         } catch (error) {
