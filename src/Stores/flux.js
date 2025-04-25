@@ -7,6 +7,7 @@ storeService.createAgenda = async () => {
     try {
         const resp = await fetch('https://playground.4geeks.com/contact/agendas/Desdentao', {
             method: 'Post',
+            body: JSON.stringify ({ slug: "Desdentao" }),
             headers: {
                 'Content-Type': 'application/json'
               }
